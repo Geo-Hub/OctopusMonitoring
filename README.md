@@ -30,7 +30,7 @@ The collected data is uploaded to an [ODK Aggregate](https://opendatakit.org/use
 
 ## Aims
 * Create a custom Android app with improved UI so data collection is easier to carry out in the field.
-* Evaluate the suitability of ODK, and any alternatives for the backend.
+* Evaluate the suitability of ODK, and any alternatives for the backend. [ODK Aggregate does have an API](https://opendatakit.org/use/aggregate/data-transfer/#APIs) so it may be possible to improve the UX but keep the existing backend.
 
 ## Solution
 
