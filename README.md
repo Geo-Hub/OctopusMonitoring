@@ -36,6 +36,6 @@ The collected data is uploaded to an [ODK Aggregate](https://opendatakit.org/use
 
 Develop an Android app to replace the ODK Collect form, maintain a strict separation of concerns between the form and the upload so it can easily be swapped out (proxy code to upload to ODK instance, upload to custom web service populating a DB, Firebase).
 
-App should include local store to queue entries that can be uploaded at a later time so the app can be used in the field without cell/wifi access.
+App should include local store to queue entries (using [Realm](https://realm.io/)) that can be uploaded at a later time so the app can be used in the field without cell/wifi access.
 
 
