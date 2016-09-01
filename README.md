@@ -10,7 +10,7 @@ Android survey app for collating fisheries data.
 [Blue Ventures](https://blueventures.org/) current Octopus Monitoring solution is an [Open Data Kit](https://opendatakit.org/) form used with the [ODK Collect](https://play.google.com/store/apps/details?id=org.odk.collect.android) application.
 
 ### Upload/Database
-The collected data is uploaded to an ODK instance running on Google App Engine. Once uploaded it can be read by any suitable system for generating reports. 
+The collected data is uploaded to an [ODK Aggregate](https://opendatakit.org/use/aggregate/) instance running on Google App Engine. Once uploaded it can be read by any suitable system for generating reports. 
 
 ### Issues
 * ODK Collect usability is extremey poor
