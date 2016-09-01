@@ -11,6 +11,10 @@ Blue Ventures current Octopus Monitoring solution is an [Open Data Kit](https://
 ### Upload/Database
 The collected data is uploaded to an ODK instance running on Google App Engine. Once uploaded it can be read by any suitable system for generating reports. 
 
+### Issues
+* ODK Collect usability is extremey poor
+* Issues with existing form, eg. if you select **all** for 'How much of the total catch was sold' the user is still presented on the next screen with the question 'What did/will you do with the rest?'
+
 ## Aims
 * Create a custom Android app with improved UI so data collection is easier to carry out in the field.
 * Evaluate the suitability of ODK, and any alternatives for the backend.
