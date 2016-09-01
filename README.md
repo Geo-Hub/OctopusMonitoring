@@ -1,5 +1,5 @@
 # Octopus Monitoring
-Android survey app for collating fisheries data
+Android survey app for collating fisheries data. See [Marine Managment Pays](https://blueventures.org/marine-management-pays/)
 
 ## Background
 
