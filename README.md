@@ -18,7 +18,7 @@ The collected data is uploaded to an ODK instance running on Google App Engine. 
 * Logical issues with existing form, eg. 
   * if you select **all** for 'How much of the total catch was sold' the user is still presented on the next screen with the question 'What did/will you do with the rest?'
   * Select **Gleaning** for method, next screen asks: 'What fishing equipment did they use (gleaning)?' with answers 'Hook and line, Spear, Other' - are these answers relevant for gleaning?
-* Multiple choices aren't cached and need to be re-entered/selected every time, could be preselected but still editable:
+* Fields aren't cached and need to be re-entered/selected every time, some could be preselected but still editable:
   * Name of village
   * Date collector name
   * Name, age, sex of main fisher
