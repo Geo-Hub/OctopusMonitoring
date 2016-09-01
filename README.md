@@ -1,7 +1,8 @@
 # Octopus Monitoring
 Android survey app for collating fisheries data. 
 
-See [Marine Managment Pays](https://blueventures.org/marine-management-pays/).
+* [Marine Managment Pays](https://blueventures.org/marine-management-pays/).
+* [Rebuilding Fisheries](https://blueventures.org/conservation/rebuilding-fisheries/)
 
 ## Background
 
