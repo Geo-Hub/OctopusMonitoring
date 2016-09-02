@@ -38,4 +38,6 @@ Develop an Android app to replace the ODK Collect form, maintain a strict separa
 
 App should include local store to queue entries (using [Realm](https://realm.io/)) that can be uploaded at a later time so the app can be used in the field without cell/wifi access.
 
+UI needs to support obscure local dialects, so the app may not be able to use native localisation features and will need its own mechanism to replace Strings in the UI.
+
 
