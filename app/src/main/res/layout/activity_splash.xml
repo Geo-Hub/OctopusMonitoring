@@ -1,24 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:id="@+id/root_view"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="org.blueventures.octopusmonitoring.SplashActivity">
+<RelativeLayout android:id="@+id/root_view"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                tools:context="org.blueventures.octopusmonitoring.SplashActivity">
 
     <ImageView
         android:id="@+id/splash_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash"/>
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/logo_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
         android:scaleType="centerInside"
-        android:padding="24dp"/>
+        android:src="@drawable/logo_white"/>
 
-
-</FrameLayout>
+    <org.blueventures.octopusmonitoring.custom.ProgressSpinner
+        android:layout_width="@dimen/progress_diam"
+        android:layout_height="@dimen/progress_diam"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+</RelativeLayout>

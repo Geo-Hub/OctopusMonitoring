@@ -29,6 +29,10 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4771292f35a421865ed1853dbe366f24752588d9" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

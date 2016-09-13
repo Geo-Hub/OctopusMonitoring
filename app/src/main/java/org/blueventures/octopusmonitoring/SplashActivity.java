@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Fabric.with(this, new Crashlytics());
     setContentView(R.layout.activity_splash);
     rootView = findViewById(R.id.root_view);
   }
@@ -23,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
     super.onPostCreate(savedInstanceState);
     hide();
 
-    new CountDownTimer(3000, 1000) {
+    new CountDownTimer(1, 500) {
 
       public void onTick(long millisUntilFinished) {
         //
