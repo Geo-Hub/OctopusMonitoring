@@ -7,9 +7,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import io.fiskur.form.Form;
 import io.fiskur.form.FormApi;
+import io.fiskur.form.creator.CreatorActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -19,6 +21,14 @@ public class HomeActivity extends AppCompatActivity {
     setContentView(R.layout.activity_home);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
+
+    Button creatorButton = (Button) findViewById(R.id.creator_button);
+    creatorButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        startActivity(new Intent(HomeActivity.this, CreatorActivity.class));
+      }
+    });
 
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {

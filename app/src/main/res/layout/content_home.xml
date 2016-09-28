@@ -13,4 +13,10 @@
     tools:context="org.blueventures.octopusmonitoring.HomeActivity"
     tools:showIn="@layout/activity_home">
 
+    <Button
+        android:id="@+id/creator_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Creator"/>
+
 </RelativeLayout>
