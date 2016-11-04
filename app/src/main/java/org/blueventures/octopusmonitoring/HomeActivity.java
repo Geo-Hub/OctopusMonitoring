@@ -1,5 +1,6 @@
 package org.blueventures.octopusmonitoring;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import io.fiskur.form.Form;
 import io.fiskur.form.FormApi;
@@ -30,15 +36,35 @@ public class HomeActivity extends AppCompatActivity {
       }
     });
 
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
+    Button demoButton = (Button) findViewById(R.id.demo_button);
+    demoButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Form form = FormApi.getInstance().createForm(TEST_JSON);
+
+        Form form = FormApi.getInstance().createForm(readRawTextFile(HomeActivity.this, R.raw.demo_form));
         Intent formIntent = FormActivity.createIntent(HomeActivity.this, form);
         startActivity(formIntent);
       }
     });
+  }
+
+  public String readRawTextFile(Context ctx, int resId) {
+    InputStream inputStream = ctx.getResources().openRawResource(resId);
+
+    InputStreamReader inputreader = new InputStreamReader(inputStream);
+    BufferedReader buffreader = new BufferedReader(inputreader);
+    String line;
+    StringBuilder text = new StringBuilder();
+
+    try {
+      while (( line = buffreader.readLine()) != null) {
+        text.append(line);
+        text.append('\n');
+      }
+    } catch (IOException e) {
+      return null;
+    }
+    return text.toString();
   }
 
   private static final String TEST_JSON = "{\n" +

@@ -1,0 +1,115 @@
+{
+  "id": "DEMO001",
+  "title": "Octopus Monitoring",
+  "date": "02112016",
+  "time": "11:32",
+  "author": "Jonathan Fisher",
+  "contact": "jonathan@fiskur.eu",
+  "startGroupId": "STARTGROUP",
+  "groups": [
+    {
+      "id": "STARTGROUP",
+      "fields": [
+        {
+          "id": "DEMO001_CURRENTDATE",
+          "text": "Todays Date",
+          "type": "CURRENT_DATE"
+        },
+        {
+          "id": "DEMO001_VILLAGENAME",
+          "text": "Name of village:",
+          "type": "FREE_TEXT"
+        },
+        {
+          "id": "DEMO001_COLLECTORNAME",
+          "text": "Data collector name:",
+          "type": "FREE_TEXT"
+        },
+        {
+          "id": "DEMO001_SPACER1",
+          "type": "SPACER",
+          "config": "160"
+        },
+        {
+          "id": "DEMO001_FISHTODAY",
+          "type": "BINARY_CHOICE",
+          "text": "Did anyone go fishing for octopus today?",
+          "choices":
+          [
+            {
+              "id": "DEMO001_FISHTODAY_NO",
+              "text": "No",
+              "subgroupId": "DEMO001_FISHTODAY_NO_SG"
+            },
+            {
+              "id": "DEMO001_FISHTODAY_YES",
+              "text": "Yes",
+              "subgroupId": "DEMO001_FISHTODAY_YES_SG"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DEMO001_FISHTODAY_NO_SG",
+      "fields": [
+        {
+          "id": "S1",
+          "type": "STATIC_TEXT",
+          "title": "Fishing Today: No"
+        }
+      ]
+    },
+    {
+      "id": "DEMO001_FISHTODAY_YES_SG",
+      "fields": [
+        {
+          "id": "DEMO001_FISHTODAY_NORMAL",
+          "type": "BINARY_CHOICE",
+          "text": "Did you work as normal today?",
+          "choices":
+          [
+            {
+              "id": "DEMO001_FISHTODAY_NORMAL_NO",
+              "text": "No",
+              "subgroupId": "DEMO001_FISHTODAY_NORMAL_NO_SG"
+            },
+            {
+              "id": "DEMO001_FISHTODAY_NORMAL_YES",
+              "text": "Yes",
+              "subgroupId": "DEMO001_FISHTODAY_NORMAL_YES_SG"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DEMO001_FISHTODAY_NORMAL_NO_SG",
+      "fields": [
+        {
+          "id": "DEMO001_FISHTODAY_NORMAL_NO_REASON",
+          "type": "SINGLE_CHOICE",
+          "text": "Why not?",
+          "choices": [
+            {
+              "id": "REASON_A",
+              "text": "You didn't work a full day"
+            },
+            {
+              "id": "REASON_B",
+              "text": "You didn't work the normal times"
+            },
+            {
+              "id": "REASON_C",
+              "text": "You didn't record any data"
+            },
+            {
+              "id": "REASON_D",
+              "text": "You were not able to do all the work"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,11 +3,15 @@ package org.blueventures.octopusmonitoring;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import io.fiskur.form.Form;
 import io.fiskur.form.FormApi;
@@ -33,6 +37,9 @@ public class FormActivity extends AppCompatActivity {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
+    //noinspection ConstantConditions
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     LinearLayout root = (LinearLayout) findViewById(R.id.form_root);
     if(getIntent().hasExtra(EXTRA_FORM)) {
       Form form = (Form) getIntent().getSerializableExtra(EXTRA_FORM);
@@ -46,17 +53,25 @@ public class FormActivity extends AppCompatActivity {
   }
 
   @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.menu_form, menu);
-    return true;
-  }
-
-  @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
 
-    if (id == R.id.action_settings) {
-      return true;
+    switch (id) {
+      case android.R.id.home:
+        new MaterialDialog.Builder(this)
+          .title(R.string.warning)
+          .content(R.string.dismiss_are_you_sure)
+          .positiveText(R.string.ok)
+          .negativeText(R.string.cancel)
+          .onPositive(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+              finish();
+            }
+          })
+          .show();
+        break;
+
     }
 
     return super.onOptionsItemSelected(item);

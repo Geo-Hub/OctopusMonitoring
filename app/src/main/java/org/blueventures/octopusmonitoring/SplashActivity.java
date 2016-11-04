@@ -26,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
     super.onPostCreate(savedInstanceState);
     hide();
 
-    new CountDownTimer(1, 500) {
+    new CountDownTimer(1500, 500) {
 
       public void onTick(long millisUntilFinished) {
         //
