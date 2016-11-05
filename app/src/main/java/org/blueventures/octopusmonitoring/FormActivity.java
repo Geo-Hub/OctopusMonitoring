@@ -6,19 +6,23 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.squareup.picasso.Picasso;
 
 import io.fiskur.form.Form;
 import io.fiskur.form.FormApi;
+import io.fiskur.form.ImageLoader;
 
 
 public class FormActivity extends AppCompatActivity {
-
+  private static final String TAG = "FormActivity";
   private static final String EXTRA_FORM = "org.blueventures.octopusmonitoring.EXTRA_FORM";
 
   public static Intent createIntent(Context context, Form form){
@@ -43,6 +47,13 @@ public class FormActivity extends AppCompatActivity {
     LinearLayout root = (LinearLayout) findViewById(R.id.form_root);
     if(getIntent().hasExtra(EXTRA_FORM)) {
       Form form = (Form) getIntent().getSerializableExtra(EXTRA_FORM);
+      FormApi.getInstance().setImageLoader(new ImageLoader() {
+        @Override
+        public void loadImage(ImageView imageView, String url) {
+          Log.d(TAG, "loadImage: " + url);
+          Picasso.with(FormActivity.this).load(url).into(imageView);
+        }
+      });
       FormApi.getInstance().buildViews(this, form, root);
       if(getSupportActionBar() != null) {
         getSupportActionBar().setTitle(form.title);
