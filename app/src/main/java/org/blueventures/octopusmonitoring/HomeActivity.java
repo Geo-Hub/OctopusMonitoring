@@ -40,12 +40,22 @@ public class HomeActivity extends AppCompatActivity {
     demoButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
-        Form form = FormApi.getInstance().createForm(readRawTextFile(HomeActivity.this, R.raw.demo_form));
-        Intent formIntent = FormActivity.createIntent(HomeActivity.this, form);
-        startActivity(formIntent);
+        gotoForm(false);
       }
     });
+
+
+    gotoForm(true);
+  }
+
+  private void gotoForm(boolean finish){
+    Form form = FormApi.getInstance().createForm(readRawTextFile(HomeActivity.this, R.raw.demo_form));
+    Intent formIntent = FormActivity.createIntent(HomeActivity.this, form);
+    startActivity(formIntent);
+
+    if(finish){
+      finish();
+    }
   }
 
   public String readRawTextFile(Context ctx, int resId) {

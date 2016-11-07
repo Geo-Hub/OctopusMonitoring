@@ -12,8 +12,13 @@
       "fields": [
         {
           "id": "demo_intro",
-          "text": "Todays Date",
-          "type": "CURRENT_DATE"
+          "title": "Form Demo",
+          "text": "This is a work in progress demo of a new 'Form' library being developed for Blue Ventures Octopus Monitoring.",
+          "type": "STATIC_TEXT"
+        },
+        {
+          "id": "demo_intro_div",
+          "type": "DIVIDER"
         },
         {
           "id": "current_date",
@@ -307,6 +312,10 @@
           "text": "Weight of the individual octopus (grams):",
           "type": "FREE_TEXT",
           "config": "singleline|numeric"
+        },
+        {
+          "id": "submit_oct",
+          "type": "SUBMIT"
         }
       ]
     }
